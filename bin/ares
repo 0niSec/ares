@@ -1,4 +1,4 @@
 #!/usr/bin/env ruby
 require_relative '../lib/ares/cli'
 
-Ares::CLI.start(ARGV)
+Ares::CLI.start()
