@@ -1,7 +1,7 @@
 require "thor"
 
 module Ares
-  class Ares::CLI < Thor
+  class CLI < Thor
     desc "scan [OPTIONS] TARGETS", "Run an Nmap scan"
     def scan(*targets)
       nmap = Ronin::Nmap.new
