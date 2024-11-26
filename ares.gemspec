@@ -4,11 +4,13 @@ Gem::Specification.new do |s|
   s.summary     = "Something will go here"
   s.description = "Some description"
   s.authors     = ["0niSec"]
-  s.files       = ["lib/ares.rb", *%w[Gemfile LICENSE Rakefile README.md], *Dir['{lib,spec}/**/*.rb', 'bin/*'] ]
+  s.files       = ["lib/ares.rb", *%w[Gemfile README.md], *Dir['{lib,spec}/**/*.rb', 'bin/*'] ]
   s.homepage    =
     "https://rubygems.org/gems/ares"
+  s.required_ruby_version = '>= 3.0'
   s.license       = "MIT"
-  s.executable << "ares"
+  s.executables << "ares"
 
   s.add_dependency 'paint', '~> 2.3.0'
+  s.add_dependency 'thor', '~> 1.3'
 end
