@@ -7,7 +7,11 @@ module Ares
     option :connect_scan, :type => :boolean, :aliases => "-sT", :desc => "Perform a connect scan"
     option :syn_scan, :type => :boolean, :aliases => "-sS", :desc => "Perform a SYN scan", default: true
     def scan(*targets)
-      xml = Ronin::Nmap.scan(sudo: false, targets: targets)
+      xml = Ronin::Nmap.scan do |nmap|
+        nmap.syn_scan = options[:syn_scan]
+        nmap.connect_scan = options[:connect_scan]
+        nmap.targets = targets
+      end
     end
   end
 end
